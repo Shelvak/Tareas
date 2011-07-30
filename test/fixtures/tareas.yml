@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ir_al_curso:
+  nombre: 'ir al curso'
+  detalles: 'Todos los sabados ir al curso'
+
+lavarme_los_dientes:
+  nombre: 'lavarme los dientes'
+  detalles: 'Todos los dias lavarme 3 veces'
