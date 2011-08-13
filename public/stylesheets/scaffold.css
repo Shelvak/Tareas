@@ -1,20 +1,19 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #88E88A; color: #1F188A; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
+  color: #1F188A;
 }
-
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
-
 a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:visited { color: #B07508; } 
+a:hover { color: #0000FF; background-color:#00FF00; }
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -22,6 +21,7 @@ div.field, div.actions {
 
 #notice {
   color: green;
+  font-weight: bold;
 }
 
 .field_with_errors {
