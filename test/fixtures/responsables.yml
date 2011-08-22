@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+rock_in_rio:
+  nombre: 'Nestor'
+  mail: 'nestor@gmail.com'
+nenenn:
+  nombre: 'franco'
+  mail: 'franco@hotmail.com'

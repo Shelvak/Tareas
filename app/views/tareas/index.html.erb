@@ -1,0 +1,34 @@
+<h1>Listado de tareas</h1>
+
+<table border=1>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Autor</th>
+    <th>Fecha</th>
+    <th>Responsable</th>
+  </tr>
+
+<% @tareas.each do |tarea| %>
+  <tr>
+    <td><%= link_to tarea.nombre, tarea %></td>
+    <td><%= truncate tarea.detalles, :length => 25 %></td>
+    <td><%= link_to tarea.autor, tareas_path(:autor => tarea.autor) %></td>
+    <td><%= l tarea.fecha %></td> 
+    <td><%= tarea.responsable %> </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Tarea', new_tarea_path %> |
+<%= link_to 'Nuevo Responsable', new_responsable_path %> |
+<%= link_to 'Tareas', tareas_path %> | 
+<%= link_to 'Responsables', responsables_path %> 
+<%= will_paginate @tareas,
+  :previous_label => '&laquo; Anterior',
+  :next_label => 'Siguiente &raquo;'  %>
+  
+<footer> By RotseN </footer> 
+
