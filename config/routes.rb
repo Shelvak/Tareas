@@ -1,5 +1,6 @@
 Tareas::Application.routes.draw do
-  resources :user_sessions, :only => [:new, :create, :destroy]
+
+  resources :responsable_sessions, :only => [:new, :create, :destroy]
   resources :responsables
   resources :tareas
 	#login "login", :controller => "sesions", :action => "new"

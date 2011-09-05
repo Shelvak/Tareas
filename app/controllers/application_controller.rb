@@ -5,26 +5,26 @@ class ApplicationController < ActionController::Base
 	#helper_method :current_user, :current_user_session
 
   private
-  def current_user_session
-    @current_user_session ||= UserSession.find
+  def current_responsable_session
+    @current_responsable_session ||= ResponsableSession.find
   end
   
-  def current_user
-    return @current_user = Responsable
-    #@current_user ||= current_user_session && current_user_session.record
+  def current_responsable
+    #return @current_responsable = Responsable
+    @current_responsable ||= current_responsable_session && current_responsable_session.record
   end
     
-    def require_user
-      unless current_user
+    def require_responsable
+      unless current_responsable
         store_location
         flash[:notice] = "You must be logged in to access this page"
-        redirect_to new_user_session_url
+        redirect_to new_responsable_session_url
         return false
       end
     end
 
-    def require_no_user
-      if current_user
+    def require_no_responsable
+      if current_responsable
         store_location
         flash[:notice] = "You must be logged out to access this page"
         redirect_to new_responsable_url
