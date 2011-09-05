@@ -1,12 +1,12 @@
 en:
   errors:
     messages:
-      invalid_date: "Día invalido"
+      invalid_date: "is not a valid date"
       invalid_time: "is not a valid time"
       invalid_datetime: "is not a valid datetime"
-      is_at: "Debe ser %{restriction}"
-      before: "Debe ser mayor a %{restriction}"
-      on_or_before: "Debe ser mayor o igual a %{restriction}"
+      is_at: "must be at %{restriction}"
+      before: "must be before %{restriction}"
+      on_or_before: "must be on or before %{restriction}"
       after: "must be after %{restriction}"
       on_or_after: "must be on or after %{restriction}"
   validates_timeliness:

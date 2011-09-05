@@ -2,14 +2,13 @@
 
 <p>
   <b>Nombre:</b>
-  <%= @responsable.nombre %>
+  <%= @user.nombre %>
 </p>
 
 <p>
   <b>Mail:</b>
-  <%= @responsable.email %>
+  <%= @user.email %>
 </p>
 
 
-<%= link_to 'Editar', edit_responsable_path(@responsable) %> |
 <%= link_to 'Volver', responsables_path %>

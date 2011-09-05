@@ -2,7 +2,7 @@ class CreateResponsables < ActiveRecord::Migration
   def self.up
     create_table :responsables do |t|
       t.string :nombre
-      t.string :mail
+      t.string :email
 
       t.timestamps
     end

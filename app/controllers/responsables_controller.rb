@@ -2,7 +2,7 @@ class ResponsablesController < ApplicationController
   # GET /responsables
   # GET /responsables.xml
   def index
-    @responsables = Responsable.all
+    @responsables = Responsable.order('email')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +44,7 @@ class ResponsablesController < ApplicationController
 
     respond_to do |format|
       if @responsable.save
-        format.html { redirect_to(@responsable, :notice => 'Responsable was successfully created.') }
+        format.html { redirect_to(@responsable, :notice => 'Responsable creado =)') }
         format.xml  { render :xml => @responsable, :status => :created, :location => @responsable }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class ResponsablesController < ApplicationController
 
     respond_to do |format|
       if @responsable.update_attributes(params[:responsable])
-        format.html { redirect_to(@responsable, :notice => 'Responsable was successfully updated.') }
+        format.html { redirect_to(@responsable, :notice => 'Responsable actualizado =D.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

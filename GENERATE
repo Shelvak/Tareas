@@ -1,0 +1,28 @@
+rails generate controller sesion new create destroy
+      create  app/controllers/sesion_controller.rb
+       route  get "sesion/destroy"
+       route  get "sesion/create"
+       route  get "sesion/new"
+      invoke  erb
+      create    app/views/sesion
+      create    app/views/sesion/new.html.erb
+      create    app/views/sesion/create.html.erb
+      create    app/views/sesion/destroy.html.erb
+      invoke  test_unit
+      create    test/functional/sesion_controller_test.rb
+      invoke  helper
+      create    app/helpers/sesion_helper.rb
+      invoke    test_unit
+      create      test/unit/helpers/sesion_helper_test.rb
+rotsen@rotsen-pc:~/Documentos/rails/tareas$ rails generate controller admin index
+      create  app/controllers/admin_controller.rb
+       route  get "admin/index"
+      invoke  erb
+      create    app/views/admin
+      create    app/views/admin/index.html.erb
+      invoke  test_unit
+      create    test/functional/admin_controller_test.rb
+      invoke  helper
+      create    app/helpers/admin_helper.rb
+      invoke    test_unit
+      create      test/unit/helpers/admin_helper_test.rb
