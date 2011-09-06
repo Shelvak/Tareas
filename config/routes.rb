@@ -3,6 +3,7 @@ Tareas::Application.routes.draw do
   resources :responsable_sessions, :only => [:new, :create, :destroy]
   resources :responsables
   resources :tareas
+  match 'login' => 'responsable_sessions#new'
 	#login "login", :controller => "sesions", :action => "new"
 	#logout "logout", :controller => "sesions", :action => "destroy"
   # The priority is based upon order of creation:

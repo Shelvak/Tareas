@@ -10,29 +10,32 @@ class ApplicationController < ActionController::Base
   end
   
   def current_responsable
-    #return @current_responsable = Responsable
     @current_responsable ||= current_responsable_session && current_responsable_session.record
   end
     
     def require_responsable
       unless current_responsable
+        flash[:notice] = "Debe estar loggiado"
         store_location
-        flash[:notice] = "You must be logged in to access this page"
         redirect_to new_responsable_session_url
-        return false
+        false
+      else
+        expires_now
       end
     end
 
     def require_no_responsable
       if current_responsable
+        flash[:notice] = "Debe estar desloggeado"
         store_location
-        flash[:notice] = "You must be logged out to access this page"
         redirect_to new_responsable_url
-        return false
+        false
+      else
+        true
       end
     end
      def store_location
-      session[:return_to] = request.request_uri
+      session[:return_to] = request.fullpath
     end
     
     def redirect_back_or_default(default)
