@@ -1,7 +1,6 @@
 class ResponsablesController < ApplicationController
-  before_filter :require_responsable
-  # GET /responsables
-  # GET /responsables.xml
+  before_filter :require_responsable, :except => [:new, :create]
+ 
   def index
     @responsables = Responsable.order('email')
 
@@ -11,8 +10,6 @@ class ResponsablesController < ApplicationController
     end
   end
 
-  # GET /responsables/1
-  # GET /responsables/1.xml
   def show
     @responsable = Responsable.find(params[:id])
 
@@ -22,8 +19,6 @@ class ResponsablesController < ApplicationController
     end
   end
 
-  # GET /responsables/new
-  # GET /responsables/new.xml
   def new
     @responsable = Responsable.new
 
@@ -33,13 +28,10 @@ class ResponsablesController < ApplicationController
     end
   end
 
-  # GET /responsables/1/edit
   def edit
     @responsable = Responsable.find(params[:id])
   end
 
-  # POST /responsables
-  # POST /responsables.xml
   def create
     @responsable = Responsable.new(params[:responsable])
 
@@ -54,8 +46,6 @@ class ResponsablesController < ApplicationController
     end
   end
 
-  # PUT /responsables/1
-  # PUT /responsables/1.xml
   def update
     @responsable = Responsable.find(params[:id])
 
@@ -70,8 +60,6 @@ class ResponsablesController < ApplicationController
     end
   end
 
-  # DELETE /responsables/1
-  # DELETE /responsables/1.xml
   def destroy
     @responsable = Responsable.find(params[:id])
     @responsable.destroy

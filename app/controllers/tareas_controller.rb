@@ -1,7 +1,6 @@
 class TareasController < ApplicationController
   before_filter :require_responsable
-  # GET /tareas
-  # GET /tareas.xml
+  
   def index
     @tareas = Tarea.order('fecha').paginate(:page => params[:page], :per_page => 5)
     @tareas = @tareas.where(:autor => params[:autor]) if params[:autor]
@@ -12,8 +11,6 @@ class TareasController < ApplicationController
     end
   end
 
-  # GET /tareas/1
-  # GET /tareas/1.xml
   def show
     @tarea = Tarea.find(params[:id])
 
@@ -23,8 +20,6 @@ class TareasController < ApplicationController
     end
   end
 
-  # GET /tareas/new
-  # GET /tareas/new.xml
   def new
     @tarea = Tarea.new
 
@@ -34,13 +29,10 @@ class TareasController < ApplicationController
     end
   end
 
-  # GET /tareas/1/edit
   def edit
     @tarea = Tarea.find(params[:id])
   end
 
-  # POST /tareas
-  # POST /tareas.xml
   def create
     @tarea = Tarea.new(params[:tarea])
 
@@ -55,8 +47,6 @@ class TareasController < ApplicationController
     end
   end
 
-  # PUT /tareas/1
-  # PUT /tareas/1.xml
   def update
     @tarea = Tarea.find(params[:id])
 
@@ -71,8 +61,6 @@ class TareasController < ApplicationController
     end
   end
 
-  # DELETE /tareas/1
-  # DELETE /tareas/1.xml
   def destroy
     @tarea = Tarea.find(params[:id])
     @tarea.destroy
