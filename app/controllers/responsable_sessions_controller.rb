@@ -1,6 +1,6 @@
 class ResponsableSessionsController < ApplicationController
-  before_filter :require_no_responsable, :only => [:new, :create]
-  before_filter :require_responsable, :only => :destroy
+  #before_filter :require_no_responsable, :only => [:new, :create]
+  #before_filter :require_responsable, :only => :destroy
   
   def new
     @responsable_session = ResponsableSession.new
@@ -10,7 +10,7 @@ class ResponsableSessionsController < ApplicationController
     @responsable_session = ResponsableSession.new(params[:user_session])
     if @responsable_session.save
       flash[:notice] = "Login successful!"
-      redirect_back_or_default account_url
+      redirect_back_or_default tareas_path
     else
       render :action => :new
     end

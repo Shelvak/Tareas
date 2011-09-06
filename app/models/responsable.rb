@@ -2,7 +2,7 @@ class Responsable < ActiveRecord::Base
 	acts_as_authentic do |c|
     c.login_field = :email
   end
-  authenticates_many :responsable_sessions
+  #authenticates_many :responsable_sessions
 	
 	validates :nombre, :email, :presence => { 
 	:message => 'no puede dejarlo en blanco' }

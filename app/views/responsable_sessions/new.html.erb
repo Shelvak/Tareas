@@ -1,5 +1,9 @@
 <h1>Login</h1>
-
+<% if @responsable_session.errors.any? %>
+  <div id="login_error">
+    <p><%= @responsable_session.errors.full_messages.join('; ') %></p>
+  </div>
+<% end %>
 <%= form_for(@responsable_session) do |f| %>
   <%= f.label :email %><br />
   <%= f.text_field :email %><br />
