@@ -44,5 +44,4 @@ fixtures :tareas
     assert_equal 1, tarea.errors.size
     assert_equal 'debe ser para hoy o el futuro', tarea.errors[:fecha][0]
 	end
-  
 end

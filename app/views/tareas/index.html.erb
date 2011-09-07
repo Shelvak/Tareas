@@ -1,5 +1,9 @@
 <h1>Listado de tareas</h1>
 
+<% if params[:responsable_id] %>
+<h4>(Ordenado por: 
+<%=  Responsable.find_by_id(params[:responsable_id]) %> )
+<% end %> </h4>
 <table>
   <tr>
     <th>Nombre</th>
@@ -10,10 +14,7 @@
   </tr>
 
 <% @tareas.each do |tarea| %>
-  <% if params[:responsable_id] %>
-    (ordenado por:
-    <%=  tarea.responsable %> )
-    <% end %>
+
   <tr>
     <td><%= link_to tarea.nombre, tarea %></td>
     <td><%= truncate tarea.detalles, :length => 25 %></td>
@@ -22,9 +23,9 @@
     <td><%= link_to tarea.responsable, 
             tareas_path(:responsable_id => tarea.responsable_id) %> </td>
   </tr>
+  
 <% end %>
 </table>
-
 <br />
 
 <%= link_to 'Nueva Tarea', new_tarea_path %> |

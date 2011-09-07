@@ -9,7 +9,7 @@
 	<b>Fecha de creacion:</b>
 	<%= @tarea.fecha %>
 	<b>Responsable: </b>
-	<%= @tarea.responsable_id %>
+	<%= @tarea.responsable %>
         <br />
         <%= link_to 'Editar', edit_tarea_path(@tarea) %> |
         <%= link_to 'Eliminar', @tarea, :confirm => 'Seguro?!?!?!?', :method => :delete %>
