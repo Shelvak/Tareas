@@ -15,7 +15,8 @@
     <td><%= truncate tarea.detalles, :length => 25 %></td>
     <td><%= link_to tarea.autor, tareas_path(:autor => tarea.autor) %></td>
     <td><%= l tarea.fecha %></td> 
-    <td><%= tarea.responsable %> </td>
+    <td><%= link_to tarea.responsable, 
+            tareas_path(:responsable_id => tarea.responsable_id) %> </td>
   </tr>
 <% end %>
 </table>

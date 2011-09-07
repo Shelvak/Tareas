@@ -9,7 +9,7 @@ class ResponsableSessionsController < ApplicationController
   def create
     @responsable_session = ResponsableSession.new(params[:responsable_session])
     if @responsable_session.save
-      flash[:notice] = "Login successful!"
+      flash[:notice] = "Bienvenido =)"
       redirect_back_or_default tareas_path
     else
       render :action => :new
@@ -18,7 +18,7 @@ class ResponsableSessionsController < ApplicationController
   
   def destroy
     current_responsable_session.destroy
-    flash[:notice] = "Logout successful!"
+    flash[:notice] = "Salida Exitosa =D Te esperamos nuevamente"
     redirect_back_or_default new_responsable_session_url
   end
 end

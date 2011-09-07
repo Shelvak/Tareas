@@ -4,18 +4,12 @@
   <tr>
     <th>Nombre</th>
     <th>Mail</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @responsables.each do |responsable| %>
   <tr>
     <td><%= responsable.nombre %></td>
     <td><%= responsable.email %></td>
-    <td><%= link_to 'Mostrar', responsable %></td>
-    <td><%= link_to 'Editar', edit_responsable_path(responsable) %></td>
-    <td><%= link_to 'Borrar', responsable, :confirm => 'Estas seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

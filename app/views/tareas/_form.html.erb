@@ -27,10 +27,11 @@
   <%= f.label :fecha %><br />
   <%= f.date_select :fecha, :order => [:day, :month, :year] %>
  </div> 
- <div class="field">
-  <%= f.label :responsable_id %><br />
-  <%= f.select :responsable_id, Responsable.all.map {
-  |r| [r.nombre, r.id]}, :include_blank => true %>
+ <div class="field" > 
+  <% f.label :responsable_id %><br />
+  <%= f.hidden_field :responsable_id, :value => @current_responsable.id %>
+  <%# f.select :responsable_id, Responsable.all.map {
+  |r| [r.nombre, r.id]}, :include_blank => true  %>
  </div>
   <div class="actions">
     <%= f.submit 'Guardar' %>

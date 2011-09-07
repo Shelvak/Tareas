@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Nombre:</b>
   <%= @responsable.nombre %>
@@ -9,7 +7,11 @@
   <b>Mail:</b>
   <%= @responsable.email %>
 </p>
+<p>
+  <%= link_to 'Editar', edit_responsable_path(@responsable) %>
+</p>
 
 
-<%= link_to 'Editar', edit_responsable_path(@responsable) %> |
-<%= link_to 'Volver', responsables_path %>
+<br />
+<%= link_to 'Tareas', tareas_path %> | 
+<%= link_to 'Responsables', responsables_path %> 

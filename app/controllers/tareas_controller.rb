@@ -4,6 +4,7 @@ class TareasController < ApplicationController
   def index
     @tareas = Tarea.order('fecha').paginate(:page => params[:page], :per_page => 5)
     @tareas = @tareas.where(:autor => params[:autor]) if params[:autor]
+    @tareas = @tareas.where(:responsable_id => params[:responsable_id]) if params[:responsable_id]
 	
     respond_to do |format|
       format.html # index.html.erb

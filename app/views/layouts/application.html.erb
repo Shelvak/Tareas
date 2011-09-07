@@ -5,16 +5,23 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
-  <% if @current_responsable %>
-  Bienvenido   <%= @current_responsable %> |
-  <%= link_to "Salir", new_responsable_session_path, :method => :delete, :confirm => "Seguro?" %>
+  <% if @current_responsable %>   
+    <%= link_to @current_responsable,:controller => 'responsables', :action => 'edit', :id => @current_responsable  %> |
+    <%= link_to "Salir", new_responsable_session_path, :method => :delete, :confirm => "Seguro?" %>
   <%  else %>
-  <%= link_to "Registrarse", new_responsable_path %> |
-  <%= link_to "Entrar", new_responsable_session_path %>
+    <%= link_to "Registrarse", new_responsable_path %> 
+      <% unless current_page?(:controller => 'responsable_sessions', :action => 'new') %>
+      |  <%= link_to "Entrar", new_responsable_session_path  %>
+      <% end %>
   <% end %>
 </head>
 <body>
 <%= yield %>
+  <br />
+  <%= flash[:notice] if flash.notice %>
+<% 3.times do %>
+<br />
+<% end %>
 </body>
-<footer> By RotseN </footer> 
+<footer> By ®RotseN-Shelvak® </footer> 
 </html>
