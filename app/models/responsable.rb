@@ -3,9 +3,9 @@ class Responsable < ActiveRecord::Base
     c.login_field = :email
   end
   	
-	validates :nombre, :email, :presence => { 
+	validates :nombre, :presence => { 
 	:message => 'no puede dejarlo en blanco' }
-	validates :password, :confirmation => true
+	#validates :password, :confirmation => true
 	
 	has_many :tareas
 

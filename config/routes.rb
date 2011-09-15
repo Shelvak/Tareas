@@ -1,11 +1,9 @@
 Tareas::Application.routes.draw do
-
-  resources :responsable_sessions, :only => [:new, :create, :destroy]
-  resources :responsables
-  resources :tareas
-  match 'login' => 'responsable_sessions#new'
-	#login "login", :controller => "sesions", :action => "new"
-	#logout "logout", :controller => "sesions", :action => "destroy"
+  post 'responsable_sessions/new' => 'responsable_sessions#new'
+	resources :responsable_sessions, :only => [:new, :create, :destroy]
+	resources :responsables
+	resources :tareas
+  match '/responsable_sessions' => 'responsable_sessions#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,7 +53,7 @@ Tareas::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

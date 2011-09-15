@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,6 +9,15 @@ gem 'sqlite3'
 gem 'validates_timeliness'
 gem 'will_paginate'
 gem 'authlogic'
+gem 'jquery-rails'
+
+group :assets do
+  gem 'sass'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'therubyracer', :require => false
+  gem 'uglifier'
+end
 # Use unicorn as the web server
 # gem 'unicorn'
 
