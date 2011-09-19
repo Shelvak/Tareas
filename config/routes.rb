@@ -1,25 +1,22 @@
 Tareas::Application.routes.draw do
-  post 'responsable_sessions/new' => 'responsable_sessions#new'
-	resources :responsable_sessions, :only => [:new, :create, :destroy]
-	resources :responsables
-	resources :tareas
-  match '/responsable_sessions' => 'responsable_sessions#new'
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  resources :tareas, :responsables
+  resources :responsable_sessions, :only => [:new, :create, :destroy]
+  #match 'responsable_sessions' => 'responsable_sessions#new', :via => :get
+  #match 'responsable_sessions' => 'responsable_sessions#create', :via => :post
+  #match 'responsable_sessions' => 'responsable_sessions#destroy', :via => :delete
+  # The priority is based upon order of :creation =>   # first created -> highest priority.
+#:as => 'nueva_sesion'
+#, :as => 'cerrar_sesion'
+  # Sample of regular :route =>   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # Sample of named :route =>   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Sample resource route with options:
-  #   resources :products do
+  # Sample resource route with :options =>   #   resources :products do
   #     member do
   #       get 'short'
   #       post 'toggle'
@@ -30,8 +27,7 @@ Tareas::Application.routes.draw do
   #     end
   #   end
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
+  # Sample resource route with sub-:resources =>   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
   #   end
@@ -44,8 +40,7 @@ Tareas::Application.routes.draw do
   #     end
   #   end
 
-  # Sample resource route within a namespace:
-  #   namespace :admin do
+  # Sample resource route within a :namespace =>   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
@@ -53,11 +48,11 @@ Tareas::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'responsable_sessions#new'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
+  # :Note => This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end

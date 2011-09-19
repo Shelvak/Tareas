@@ -18,6 +18,10 @@ group :assets do
   gem 'therubyracer', :require => false
   gem 'uglifier'
 end
+
+group :test do
+	gem 'turn'
+end
 # Use unicorn as the web server
 # gem 'unicorn'
 

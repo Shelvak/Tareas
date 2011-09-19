@@ -1,6 +1,6 @@
 class ResponsableSessionsController < ApplicationController
-  before_filter :require_no_responsable, :only => [:new, :create, :post]
-  before_filter :require_responsable, :only => [:destroy, :post]
+  before_filter :require_no_responsable, :only => [:new, :create]
+  before_filter :require_responsable, :only => [:destroy]
   
   def new
     @responsable_session = ResponsableSession.new
