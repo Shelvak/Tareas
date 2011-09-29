@@ -1,0 +1,18 @@
+<div>
+    <%= link_to Tarea.human_attribute_name(:tareas), tareas_path  %> | 
+  <%= link_to Responsable.human_attribute_name(:responsables), responsables_path  %> | 
+  
+  
+  
+  <% if @current_responsable %>   
+    <%= link_to @current_responsable,:controller => 'responsables', :action => 'edit', :id => @current_responsable  %> |
+    <%= link_to "Salir", new_responsable_session_path, :method => :delete, :confirm => "Seguro?" %>
+  <% else %>
+    <%= link_to "Registrarse", new_responsable_path %> 
+      <%  unless current_page?(:controller => 'responsable_sessions', :action => 'new') %>
+      <%# unless responsable_session[:responsable] %>
+      |  <%= link_to "Entrar", new_responsable_session_path  %>
+      <% end %>
+  <% end %>
+      
+</div>

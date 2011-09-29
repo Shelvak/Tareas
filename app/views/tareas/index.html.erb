@@ -29,9 +29,7 @@
 <br />
 
 <%= link_to 'Nueva Tarea', new_tarea_path %> |
-<%= link_to 'Nuevo Responsable', new_responsable_path %> |
-<%= link_to 'Tareas', tareas_path %> | 
-<%= link_to 'Responsables', responsables_path %> <br />
+<%= link_to 'Nuevo Responsable', new_responsable_path %> <br />
 <%= will_paginate @tareas,
   :previous_label => '&laquo; Anterior',
   :next_label => 'Siguiente &raquo;'  %>
