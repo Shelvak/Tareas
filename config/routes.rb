@@ -1,6 +1,11 @@
 Tareas::Application.routes.draw do
-  resources :tareas, :responsables
+  resources :responsables
   resources :responsable_sessions, :only => [:new, :create, :destroy]
+  
+  resources :tareas do
+    get :completa, :on => :member
+  end
+  
   #match 'responsable_sessions' => 'responsable_sessions#new', :via => :get
   #match 'responsable_sessions' => 'responsable_sessions#create', :via => :post
   #match 'responsable_sessions' => 'responsable_sessions#destroy', :via => :delete

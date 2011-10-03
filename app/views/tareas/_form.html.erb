@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre, placeholder: 'Nombre...' %>
   </div>
   <div class="field">
   <%= f.label :detalles %><br />
-  <%= f.text_area :detalles, :rows => 5 %>
+  <%= f.text_area :detalles, :rows => 5, placeholder: 'Detalles...' %>
  </div>
  <div class="field">
   <%= f.label :autor %><br />
-  <%= f.text_field :autor %>
+  <%= f.text_field :autor, placeholder: 'Quien lo hizo' %>
  </div>
  <div class="field">
   <%= f.label :fecha %><br />

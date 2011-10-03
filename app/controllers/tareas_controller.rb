@@ -1,8 +1,12 @@
+# encoding: UTF-8
+
 class TareasController < ApplicationController
   before_filter :require_responsable
   
+  layout proc { |controller| controller.request.xhr? ? false : 'application' }
+  
   def index
-    @tareas = Tarea.order('fecha').paginate(:page => params[:page], :per_page => 5)
+    @tareas = Tarea.order('fecha').paginate(:page => params[:page], :per_page => 15)
     @tareas = @tareas.where(:autor => params[:autor]) if params[:autor]
     @tareas = @tareas.where(:responsable_id => params[:responsable_id]) if params[:responsable_id]
 	
@@ -12,6 +16,20 @@ class TareasController < ApplicationController
     end
   end
 
+  def completa
+    @tarea = Tarea.find(params[:id])
+    @tarea.update_attribute :completa, true
+    
+     if request.xhr?
+      render :partial => 'tarea', :locals => {:tarea => @tarea}
+    else
+      respond_to do |format|
+        format.html { redirect_to(tareas_url) }
+        format.xml  { head :ok }
+      end
+     end
+  end
+  
   def show
     @tarea = Tarea.find(params[:id])
 

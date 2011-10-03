@@ -10,6 +10,8 @@
 	<%= @tarea.fecha %>
 	<b>Responsable: </b>
 	<%= @tarea.responsable %>
+        <b>Completa?</b>
+        <%= @tarea.completa ? 'Completa' : 'Pendiente' %>
         <br />
         <%= link_to 'Editar', edit_tarea_path(@tarea) %> |
         <%= link_to 'Eliminar', @tarea, :confirm => 'Seguro?!?!?!?', :method => :delete %>
