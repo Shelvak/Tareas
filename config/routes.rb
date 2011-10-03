@@ -1,5 +1,5 @@
 Tareas::Application.routes.draw do
-  resources :responsables
+  resources :responsables, :tareas
   resources :responsable_sessions, :only => [:new, :create, :destroy]
   
   resources :tareas do

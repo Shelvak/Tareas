@@ -3,7 +3,7 @@
 class TareasController < ApplicationController
   before_filter :require_responsable
   
-  layout proc { |controller| controller.request.xhr? ? false : 'application' }
+  proc { |controller| controller.request.xhr? ? false : 'application' }
   
   def index
     @tareas = Tarea.order('fecha').paginate(:page => params[:page], :per_page => 15)
@@ -15,10 +15,13 @@ class TareasController < ApplicationController
       format.xml  { render :xml => @tareas }
     end
   end
-
+  
+  # GET /tareas/1/completar
+  # GET /tareas/1/completar.xml
   def completa
     @tarea = Tarea.find(params[:id])
     @tarea.update_attribute :completa, true
+    
     
      if request.xhr?
       render :partial => 'tarea', :locals => {:tarea => @tarea}

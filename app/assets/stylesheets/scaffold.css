@@ -1,6 +1,6 @@
 body { background-color: #88E88A; color: #1F188A; }
 
-/*body, p, ol, ul, td {
+body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -9,15 +9,14 @@ body { background-color: #88E88A; color: #1F188A; }
 table, th{
    font-size: 14px;
    font-family: bold arial;
-}*/
-.completa {
-    color: #ff0006;
-    font-style: bold;
 }
-/*table, td,tr {
+.completa {
+    font-family: bold arial;
+}
+table, td,tr {
     font-size: 12px;
     border: 2px solid gray;
-}*/
+}
 pre {
   background-color: #eee;
   padding: 10px;
