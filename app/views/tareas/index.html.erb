@@ -14,21 +14,8 @@
     <th>Completar</th>
   </tr>
 
-<% @tareas.each do |tarea| %>
+<%= render @tareas%>
 
- <tr <%= raw 'class="completa"' if tarea.completa %>>
-    <td><%= link_to tarea.nombre, tarea %></td>
-    <td><%= truncate tarea.detalles, :length => 25 %></td>
-    <td><%= link_to tarea.autor, tareas_path(:autor => tarea.autor) %></td>
-    <td><%= l tarea.fecha %></td> 
-    <td><%= link_to tarea.responsable, 
-            tareas_path(:responsable_id => tarea.responsable_id) %> </td>
-    <td><%= tarea.completa ? 'Completa' : link_to('Completa?', completa_tarea_path(tarea), :remote => true, :class => 'tarea_completa', 'data-type' => 'html') %> </td>
-
-  </tr>
-  
-  
-<% end %>
 </table>
 <br />
 
