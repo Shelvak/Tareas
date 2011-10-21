@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Responsable < ActiveRecord::Base
 	acts_as_authentic do |c|
     c.login_field = :email

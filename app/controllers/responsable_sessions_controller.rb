@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class ResponsableSessionsController < ApplicationController
   before_filter :require_no_responsable, :only => [:new, :create]
   before_filter :require_responsable, :only => [:destroy]

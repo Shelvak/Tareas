@@ -1,3 +1,4 @@
+#encoding: UTF-8
 Tareas::Application.routes.draw do
   resources :responsables, :tareas
   resources :responsable_sessions, :only => [:new, :create, :destroy]

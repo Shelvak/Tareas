@@ -10,6 +10,7 @@ gem 'validates_timeliness'
 gem 'will_paginate'
 gem 'authlogic'
 gem 'jquery-rails'
+gem 'whenever', require: false
 
 group :assets do
   gem 'sass'
@@ -20,6 +21,7 @@ group :assets do
 end
 
 group :test do
+  gem 'minitest'
 	gem 'turn'
 end
 # Use unicorn as the web server

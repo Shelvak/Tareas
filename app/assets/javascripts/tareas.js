@@ -9,12 +9,3 @@ jQuery(function($){
         $(this).parents('tr:first').replaceWith(data);
     });
 });
-//jQuery(function($) {
-//
-//+  $('a.completar_tarea').live('ajax:success', function(xhr, data) {
-//
-//+    $(this).parents('tr:first').replaceWith(data);
-//
-//+  });
-//
-//+});

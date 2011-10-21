@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class ResponsablesController < ApplicationController
   before_filter :require_responsable, :except => [:new, :create]
  

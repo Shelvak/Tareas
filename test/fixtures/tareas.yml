@@ -5,6 +5,8 @@ ir_al_curso:
   detalles: 'Todos los sabados ir al curso'
   autor: 'Nestor'
   fecha: <%= Date.tomorrow.to_s(:db) %>
+  completa: false
+  responsable: 'Franco'
   
 lavarme_los_dientes:
   nombre: 'lavarme los dientes'

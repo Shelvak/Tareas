@@ -1,4 +1,6 @@
+#encoding: UTF-8
 class Tarea < ActiveRecord::Base
+  
 validates :nombre, :detalles, :autor, :presence => { 
 :message => 'no puede dejarlo en blanco' }
 validates :autor , :length => {:maximum => 15 }
@@ -16,4 +18,17 @@ validates_each :nombre do |record, attr, value|
 	end
 end
 belongs_to :responsable
+
+ def self.recordar_vencimientos
+    tareas = Tarea.where(
+      ['fecha BETWEEN :hoy AND :futuro','responsable_id IS NOT NULL',
+        'completa = :false'].join(' AND '), hoy: Date.today,
+      futuro: 3.days.from_now.to_date, false: false
+    )
+
+    tareas.each do |tarea|
+      TareasMailer.tarea_cerca_de_vencer(tarea).deliver
+    end
+  end
+
 end
