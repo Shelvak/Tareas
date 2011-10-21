@@ -38,6 +38,7 @@ class ResponsablesController < ApplicationController
 
     respond_to do |format|
       if @responsable.save
+        ResponsableMailer.bienvenido(@responsable).deliver
         format.html { redirect_to(@responsable, :notice => 'Responsable creado =)') }
         format.xml  { render :xml => @responsable, :status => :created, :location => @responsable }
       else

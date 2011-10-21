@@ -19,6 +19,11 @@ validates_each :nombre do |record, attr, value|
 end
 belongs_to :responsable
 
+  def to_s
+    self.nombre
+  end
+  
+  
  def self.recordar_vencimientos
     tareas = Tarea.where(
       ['fecha BETWEEN :hoy AND :futuro','responsable_id IS NOT NULL',
@@ -27,7 +32,7 @@ belongs_to :responsable
     )
 
     tareas.each do |tarea|
-      TareasMailer.tarea_cerca_de_vencer(tarea).deliver
+      TareasMailer.tarea_cerca_vencer(tarea).deliver
     end
   end
 

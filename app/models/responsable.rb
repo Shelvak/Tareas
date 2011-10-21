@@ -6,7 +6,6 @@ class Responsable < ActiveRecord::Base
   	
 	validates :nombre, :presence => { 
 	:message => 'no puede dejarlo en blanco' }
-	#validates :password, :confirmation => true
 	
 	has_many :tareas
 

@@ -21,6 +21,8 @@ class TareasController < ApplicationController
   def completa
     @tarea = Tarea.find(params[:id])
     @tarea.update_attribute :completa, true
+    @resp = current_responsable
+    @tarea.update_attribute :autor, @resp.nombre
     
     
      if request.xhr?
