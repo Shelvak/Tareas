@@ -71,4 +71,13 @@ class ResponsablesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def autocompletar
+    @responsables = Responsable.con_nombre(params[:term])
+
+    respond_to do |format|
+      format.js { render text: @responsables.map(&:to_s) }
+    end
+  end
+ 
 end

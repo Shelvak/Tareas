@@ -8,10 +8,12 @@ class Responsable < ActiveRecord::Base
 	:message => 'no puede dejarlo en blanco' }
 	
 	has_many :tareas
-
+  scope :con_nombre, lambda { |nombre| where('LOWER(nombre) LIKE ?', "#{nombre}%".downcase) }
 
 	def to_s 
 		self.nombre
 	end
+  
+  
 
 end
